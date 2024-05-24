@@ -32,3 +32,8 @@ const provincesWithoutCape = provinces.filter(
     (province) => !province.includes("Cape")
 );
 console.log(provincesWithoutCape.length);
+
+const hasS = names.map((name) => name.includes("S"));
+const hasSIncludes = names.some((name) => name.includes("S")); // Check if at least one name has 'S'
+console.log(hasS);
+console.log(hasSIncludes);
