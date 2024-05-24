@@ -55,3 +55,5 @@ const total = products
         return acc;
     }, 0);
 console.log(`Total Price: ${total}`);
+
+console.log(products.reduce((acc, product) => acc + product.product, "")); // Concatenate product names
