@@ -37,3 +37,9 @@ const hasS = names.map((name) => name.includes("S"));
 const hasSIncludes = names.some((name) => name.includes("S")); // Check if at least one name has 'S'
 console.log(hasS);
 console.log(hasSIncludes);
+
+const nameProvinceMap = names.reduce((acc, name, index) => {
+    acc[name] = provinces[index] || "No Province Assigned"; // Assign default if no province
+    return acc;
+}, {});
+console.log(nameProvinceMap);
