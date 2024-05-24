@@ -71,3 +71,14 @@ const priceExtremes = products.reduce((acc, product) => {
 console.log(
     `Highest: ${priceExtremes.highest}. Lowest: ${priceExtremes.lowest}`
 );
+
+const transformedProducts = Object.entries(
+    products.reduce((acc, product) => {
+        acc[product.product] = {
+            name: product.product,
+            cost: parseInt(product.price) || 0,
+        };
+        return acc;
+    }, {})
+).map(([key, value]) => ({ [key]: value })); // Destructuring and wrapping in object
+console.log(transformedProducts);
