@@ -47,3 +47,11 @@ console.log(nameProvinceMap);
 console.log(products.map((product) => product.product).join(", ")); // Join product names with comma
 
 console.log(products.filter((product) => product.product.length <= 5));
+
+const total = products
+    .filter((product) => product.price !== "" && !isNaN(product.price)) // Filter products with valid prices
+    .reduce((acc, product) => {
+        acc += parseInt(product.price); // Convert price to number and add to accumulator
+        return acc;
+    }, 0);
+console.log(`Total Price: ${total}`);
