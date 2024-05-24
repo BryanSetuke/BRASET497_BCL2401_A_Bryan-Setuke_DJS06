@@ -1,18 +1,32 @@
 // A list of provinces:
-const provinces = ['Western Cape', 'Gauteng', 'Northern Cape', 'Eastern Cape', 'KwaZulu-Natal', 'Free State']
+const provinces = [
+    "Western Cape",
+    "Gauteng",
+    "Northern Cape",
+    "Eastern Cape",
+    "KwaZulu-Natal",
+    "Free State",
+];
 
 // A list of names:
-const names = ['Ashwin', 'Sibongile', 'Jan-Hendrik', 'Sifso', 'Shailen', 'Frikkie']
+const names = [
+    "Ashwin",
+    "Sibongile",
+    "Jan-Hendrik",
+    "Sifso",
+    "Shailen",
+    "Frikkie",
+];
 
 // A list of products with prices:
 const products = [
-  { product: 'banana', price: "2" },
-  { product: 'mango', price: 6 },
-  { product: 'potato', price: ' ' },
-  { product: 'avocado', price: "8" },
-  { product: 'coffee', price: 10 },
-  { product: 'tea', price: '' },
-]
+    { product: "banana", price: "2" },
+    { product: "mango", price: 6 },
+    { product: "potato", price: " " },
+    { product: "avocado", price: "8" },
+    { product: "coffee", price: 10 },
+    { product: "tea", price: "" },
+];
 
 // Logging Each Province
 provinces.forEach((province) => console.log(province));
@@ -64,7 +78,7 @@ console.log(products.filter((product) => product.product.length <= 5));
 const total = products
     .filter((product) => product.price !== "" && !isNaN(product.price)) // Filter products with valid prices
     .reduce((acc, product) => {
-        acc += parseInt(product.price); // Convert price to number and add to accumulator
+        acc += Number(product.price); // Convert price to number and add to accumulator
         return acc;
     }, 0);
 console.log(`Total Price: ${total}`);
@@ -98,3 +112,4 @@ const transformedProducts = Object.entries(
     }, {})
 ).map(([key, value]) => ({ [key]: value })); // Destructuring and wrapping in object
 console.log(transformedProducts);
+4;
