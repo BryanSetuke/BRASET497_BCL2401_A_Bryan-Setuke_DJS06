@@ -45,3 +45,5 @@ const nameProvinceMap = names.reduce((acc, name, index) => {
 console.log(nameProvinceMap);
 
 console.log(products.map((product) => product.product).join(", ")); // Join product names with comma
+
+console.log(products.filter((product) => product.product.length <= 5));
